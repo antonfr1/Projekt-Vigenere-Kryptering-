@@ -21,8 +21,8 @@ def deKryption(kryptKey,kryptedTekst): # funktion der dekrypterer teksten.
     deKryptedTekstString = "" # laver en tom string til den dekrypterede tekst.
     
     for  i in range(1, len(kryptedTekst)+1): # for hvert tal i intervallet fra 1 til længden af den krypterede tekst + 1. (plusser med 1 fordi ellers virker modulo ikke i den sammenhæng jeg vil bruge det til)
-        x = i % len(kryptKeyAscii) # får modulo værdien af i ud fra længden af krypterings nøglen.
-        deKryptedTekst = kryptedTekst[i-1]-kryptKeyAscii[x-1] # trækker ascii værdien af bogstavet i krypterings nøglen fra ascii værdien af bogstavet i den krypterede tekst. (x-1 og i-1 fordi lister starter ved 0)
+        x = i % len(kryptKey) # får modulo værdien af i ud fra længden af krypterings nøglen.
+        deKryptedTekst = kryptedTekst[i-1]-kryptKey[x-1] # trækker ascii værdien af bogstavet i krypterings nøglen fra ascii værdien af bogstavet i den krypterede tekst. (x-1 og i-1 fordi lister starter ved 0)
         deKryptedTekstString += chr(deKryptedTekst) # tilsætter det dekrypterede bogstav til den dekrypterede tekst string vi lavede i starten af funktionen.
     
     print (deKryptedTekstString) # viser den dekrypterede tekst til brugeren.
