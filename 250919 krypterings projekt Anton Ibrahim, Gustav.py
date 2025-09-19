@@ -17,7 +17,7 @@ def kryptering(kryptKey,tekst): # funktion der krypterer teksten.
     print (kryptedTekstString) # viser den krypterede tekst til brugeren.
     return lavKryptedList(kryptedTekstString) # returner den krypterede tekst som en liste med ascii værdier.
 
-def deKryption(kryptKeyAscii,kryptedTekst): # funktion der dekrypterer teksten.
+def deKryption(kryptKey,kryptedTekst): # funktion der dekrypterer teksten.
     deKryptedTekstString = "" # laver en tom string til den dekrypterede tekst.
     
     for  i in range(1, len(kryptedTekst)+1): # for hvert tal i intervallet fra 1 til længden af den krypterede tekst + 1. (plusser med 1 fordi ellers virker modulo ikke i den sammenhæng jeg vil bruge det til)
