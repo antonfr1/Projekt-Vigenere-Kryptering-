@@ -27,9 +27,14 @@ def deKryption(kryptKey,kryptedTekst): # funktion der dekrypterer teksten.
     
     print (deKryptedTekstString) # viser den dekrypterede tekst til brugeren.
 
-tekstList = lavKryptedList(input("hvad vil du kryptere: ")) # beder brugeren om at indtaste en tekst der skal krypteres og laver den om til en liste med ascii værdier.
-kryptKey = lavKryptedList(input("din personlige krypt key: ")) # beder brugeren om at indtaste en krypterings nøgle og laver krypterings nøglen om til en liste med ascii værdier.
-kryptedString = kryptering(kryptKey, tekstList) # kalder krypterings funktionen og gemmer den krypterede tekst som en liste med ascii værdier.
-
-opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) # beder brugeren om at indtaste krypterings nøglen for at dekryptere teksten.
-deKryption(opLåsNøgle, kryptedString)
+    if input("Vil du kryptere eller dekryptere? (k/d): ") == "k": # Spørger brugeren om de har brug for at.
+        tekstList = lavKryptedList(input("hvad vil du kryptere: ")) # Spørger brugeren hvad de vil kryptere.
+        kryptKey = lavKryptedList(input("din personlige krypt key: ")) # Spørger vilken nøgle de vil kryptere deres tekst med.
+        kryptedString = kryptering(kryptKey, tekstList) # Kryptere teksten.
+        
+    if input("Vil du kryptere eller dekryptere? (k/d): ") == "d": # Vis brugeren ville dekryptere.
+        opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) # Spørger om nøglen som teksten er krypteret med (så det kan dekrypteres)
+        deKryption(opLåsNøgle, kryptedString) # Dekrypter teksten.
+    
+    else:
+        print("Fejl, prøv igen") # Vis brugeren skrev forkert så istedet for intet sker så viser vi en fejl til brugeren.
