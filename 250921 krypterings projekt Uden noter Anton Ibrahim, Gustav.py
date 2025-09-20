@@ -1,4 +1,4 @@
-def lavKryptedList(string):
+def lavAsciiList(string):
     liste = [] 
     for i in string: 
         liste.append(ord(i)) 
@@ -12,7 +12,7 @@ def kryptering(kryptKey,tekst):
         kryptedTekstString += chr(kryptedTekst) 
     
     print (kryptedTekstString) 
-    return lavKryptedList(kryptedTekstString) 
+    return lavAsciiList(kryptedTekstString) 
 
 def deKryption(kryptKey,kryptedTekst):
     deKryptedTekstString = "" 
@@ -30,16 +30,17 @@ def deKryption(kryptKey,kryptedTekst):
 kryptOrDekrypt = input("Vil du kryptere eller dekryptere? (k/d): ")
 kryptDone = False
 if  kryptOrDekrypt == "k":
-    tekstList = lavKryptedList(input("hvad vil du kryptere: "))
-    kryptKey = lavKryptedList(input("din personlige krypt key: "))
+    tekstList = lavAsciiList(input("hvad vil du kryptere: "))
+    kryptKey = lavAsciiList(input("din personlige krypt key: "))
     kryptedString = kryptering(kryptKey, tekstList)
     kryptDone = True
 
 
 if kryptOrDekrypt == "d" or kryptDone == True:
     if kryptDone == False:
-        kryptedString = lavKryptedList(input("Hvad er den krypterede tekst? "))
+        kryptedString = lavAsciiList(input("Hvad er den krypterede tekst? "))
     opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) 
     deKryption(opLåsNøgle, kryptedString)
 else:
     print("Fejl, prøv igen")
+
