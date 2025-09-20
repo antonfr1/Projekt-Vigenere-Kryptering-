@@ -24,9 +24,12 @@ def deKryption(kryptKey,kryptedTekst):
     
     print (deKryptedTekstString)
 
-tekstList = lavKryptedList(input("hvad vil du kryptere: "))
-kryptKey = lavKryptedList(input("din personlige krypt key: "))
-kryptedString = kryptering(kryptKey, tekstList) 
-
-opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) 
-deKryption(opLåsNøgle, kryptedString)
+    if input("Vil du kryptere eller dekryptere? (y/n): ") == "y":
+        tekstList = lavKryptedList(input("hvad vil du kryptere: "))
+        kryptKey = lavKryptedList(input("din personlige krypt key: "))
+        kryptedString = kryptering(kryptKey, tekstList)
+    if input("Vil du kryptere eller dekryptere? (y/n): ") == "n":
+        opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) 
+        deKryption(opLåsNøgle, kryptedString)
+    else:
+        print("Fejl, prøv igen")
