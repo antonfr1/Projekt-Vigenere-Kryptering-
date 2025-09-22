@@ -38,8 +38,9 @@ if  kryptOrDekrypt == "k": # hvis brugeren vil kryptere.
 if kryptOrDekrypt == "d" or kryptDone == True: # hvis brugeren vil dekryptere eller der lige er blevet krypteret.
     if kryptDone == False: # hvis der ikke lige er blevet krypteret.
         kryptedString = lavAsciiList(input("Hvad er den krypterede tekst? ")) # spørger brugeren hvad den krypterede tekst er og laver det om til en liste med ascii værdier.
-    opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) # spørger brugeren om deres krypterings nøgle og laver det om til en liste med ascii værdier.
+    opLåsNøgle = lavAsciiList(input("Hvad er nøglen? ")) # spørger brugeren om deres krypterings nøgle og laver det om til en liste med ascii værdier.
     deKryption(opLåsNøgle, kryptedString) # kalder dekrypterings funktionen med krypterings nøglen og den krypterede tekst.
 else:
 
     print("Fejl, prøv igen") # hvis brugeren ikke skrev k eller d.
+
