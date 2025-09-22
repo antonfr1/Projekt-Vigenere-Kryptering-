@@ -39,8 +39,9 @@ if  kryptOrDekrypt == "k":
 if kryptOrDekrypt == "d" or kryptDone == True:
     if kryptDone == False:
         kryptedString = lavAsciiList(input("Hvad er den krypterede tekst? "))
-    opLåsNøgle = lavKryptedList(input("Hvad er nøglen? ")) 
+    opLåsNøgle = lavAsciiList(input("Hvad er nøglen? ")) 
     deKryption(opLåsNøgle, kryptedString)
 else:
     print("Fejl, prøv igen")
+
 
